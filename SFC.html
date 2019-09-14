@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--===============================================================================================-->
+		<link rel="icon" type="image/png" href="/static/ADD/images/icons/favicon.ico"/>
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/bootstrap/css/bootstrap.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/fonts/iconic/css/material-design-iconic-font.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/animate/animate.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/css-hamburgers/hamburgers.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/animsition/css/animsition.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/select2/select2.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/daterangepicker/daterangepicker.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/noui/nouislider.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/static/ADD/css/util.css">
+		<link rel="stylesheet" type="text/css" href="/static/ADD/css/main.css">
+		<!--===============================================================================================-->
+	</head>
+	<body>
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form action="/SFC/" method="POST" class="contact100-form validate-form">
+				{% csrf_token %}
+				<span class="contact100-form-title">Security Network Service Chain Control Board </span>
+                		<ul id="sfcTab" class="nav nav-tabs">
+                                  <li class="nav-item">
+                                    <a href="#flow1" data-toggle="tab" class="active nav-link" style="font-size:24px; font-family:Montserrat-SemiBold">
+                                      Flow1  
+                                    </a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a href="#flow2" data-toggle="tab" class="nav-link" style="font-size:24px; font-family:Montserrat-SemiBold">
+                                      Flow2
+                                    </a>
+                                  </li>
+                                </ul>
+                                <div id=sfcTabContent class="tab-content">
+                                <div class="tab-pane active" id="flow1">
+                                <table class="table table-hover">
+					<thead style="display:block;">
+         					<tr  bgcolor = #FFFACD >
+							<td width = 100>{{mess}}</td>
+							<td width = 550 align='center' style="font-size:24px;">Netwok Service(Flow1)</td>
+							<td width = 150 align='center' style="font-size:24px;">Order</td>
+      						</tr>
+   					</thead>
+   					<tbody style=height:850px;overflow:auto;display:block;">
+						<tr>
+							<td width = 100></td>
+                                        		<td width = 550 align='center' style="vertical-align:middle;"><img src="/static/img/FW.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+                                                		<select id="sel10" name="sel10">
+                                                        		<option>不執行</option>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                		</select>
+                                        		</td>
+                                		</tr>
+						<tr>
+							<td width = 100></td>
+                                        		<td width = 550 style="vertical-align:middle;" ><img src="/static/img/IDS.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+								<select id="sel11" name="sel11"> 
+	    								<option>不執行</option>  
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+								</select>
+							</td>
+                                		</tr>
+                                		<tr>
+							<td width = 100></td>
+                                        		<td width = 550 style="vertical-align:middle;" ><img src="/static/img/DPI.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+								<select id="sel12" name="sel12">
+									<option>不執行</opti1on>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+        							</select>
+
+							</td>
+                                		</tr>
+						<tr>
+							<td width = 100></td>
+                                        		<td width = 550 style="vertical-align:middle;" ><img src="/static/img/WAF.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+								<select id="sel13" name="sel13">
+                                                        		<option>不執行</option>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                		</select>
+							</td>
+                                		</tr>
+					</tbody>
+				</table>
+                                </div>
+                                <div class="tab-pane" id="flow2">
+                                <table class="table table-hover">
+					<thead style="display:block;">
+         					<tr  bgcolor = #FFFACD >
+							<td width = 100>{{mess}}</td>
+							<td width = 550 align='center' style="font-size:24px;">Netwok Service(Flow2)</td>
+							<td width = 150 align='center' style="font-size:24px;">Order</td>
+      						</tr>
+   					</thead>
+   					<tbody style=height:850px;overflow:auto;display:block;">
+						<tr>
+							<td width = 100></td>
+                                        		<td width = 550 align='center' style="vertical-align:middle;"><img src="/static/img/FW.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+                                                		<select id="sel20" name="sel20">
+                                                        		<option>不執行</option>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                		</select>
+                                        		</td>
+                                		</tr>
+						<tr>
+							<td width = 100></td>
+                                        		<td width = 550 style="vertical-align:middle;" ><img src="/static/img/IDS.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+								<select id="sel21" name="sel21"> 
+	    								<option>不執行</option>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+								</select>
+							</td>
+                                		</tr>
+                                		<tr>
+							<td width = 100></td>
+                                        		<td width = 550 style="vertical-align:middle;" ><img src="/static/img/DPI.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+								<select id="sel22" name="sel22">
+									<option>不執行</opti1on>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+        							</select>
+
+							</td>
+                                		</tr>
+						<tr>
+							<td width = 100></td>
+                                        		<td width = 550 style="vertical-align:middle;" ><img src="/static/img/WAF.png"></td>
+                                        		<td width = 150 align='center' style="vertical-align:middle;font-size:18px;">
+								<select id="sel23" name="sel23">
+                                                        		<option>不執行</option>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                		</select>
+							</td>
+                                		</tr>
+					</tbody>
+				</table>
+                                </div>
+                                </div>
+					<input type="submit" class="btn btn-danger"  value="Start" style="width:800px;font-size:24px;" >
+					{% for order in serviceorder %}
+						{{order.0}}{{order.1}}{{order.2}}{{order.3}}
+					{% endfor %}
+
+                                        {{ nat }}
+                                        {{ fw }}
+                                        {{ ids }}
+                                        {{ dpi }}
+                                        {{ waf }}
+                                        {{ gw }}
+                                        {{ myO }}
+
+			</form>
+		</div>
+	</div>
+	<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/ADD/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+
+
+			$(".js-select2").each(function(){
+				$(this).on('select2:close', function (e){
+					if($(this).val() == "Please chooses") {
+						$('.js-show-service').slideUp();
+					}
+					else {
+						$('.js-show-service').slideUp();
+						$('.js-show-service').slideDown();
+					}
+				});
+			});
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/ADD/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/noui/nouislider.min.js"></script>
+	<script>
+	    var filterBar = document.getElementById('filter-bar');
+
+	    noUiSlider.create(filterBar, {
+	        start: [ 1500, 3900 ],
+	        connect: true,
+	        range: {
+	            'min': 1500,
+	            'max': 7500
+	        }
+	    });
+
+	    var skipValues = [
+	    document.getElementById('value-lower'),
+	    document.getElementById('value-upper')
+	    ];
+
+	    filterBar.noUiSlider.on('update', function( values, handle ) {
+	        skipValues[handle].innerHTML = Math.round(values[handle]);
+	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+	    });
+	</script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'UA-23581568-13');
+	</script>
+<script type="text/javascript">
+		var SelectCtrl = function(node_arr, options)
+		{
+	    		var _this = this;
+	    		var selects = this.selects = {};
+	    		this.items = options;
+	    		for (var i=0,L=node_arr.length; i<L; i++)
+	    		{
+				var node = node_arr[i];
+	        		selects[i] = node;
+	        		node.onchange = function(){_this.reset();};
+	        		this.insertOptions(node);
+				
+	    		}
+		}
+		SelectCtrl.prototype = {
+	    		selecteds : {},
+	    		clearOptions : function(node)
+	    		{
+	       			node.options.length = 1;
+	    		},
+	    		insertOptions : function(node)
+	    		{
+	        		for (var x in this.items)
+	        		{
+	            			var _value = this.items[x];
+
+	            			if (!this.selecteds[_value])
+	            			{
+	                			node.options[node.options.length] = new Option(x, _value, null, false);
+	            			}
+	        		}
+	    		},
+	    		reset : function()
+	    		{
+	        		this.selecteds = {};
+	        		for (var x in this.selects)
+	        		{
+	            			var node = this.selects[x];
+	            			if (node.selectedIndex != 0)
+	            			{
+	                			this.selecteds[node.value] = true;
+	            			}
+	        		}
+	        		for (var x in this.selects)
+	        		{
+	            			var node = this.selects[x];
+	            			var selectedIndex = node.selectedIndex;
+		    			var value = node.value;
+	            			var text = node.options[selectedIndex].innerHTML;
+	            			this.clearOptions(node);
+	            			this.insertOptions(node);
+	            			if (selectedIndex != 0)
+	            			{
+	                			node.options[node.options.length] = new Option(text, value, null, true);
+		    			}
+	        		}
+	    		}
+		};
+		new SelectCtrl(document.getElementsByTagName('select'), {1:1,2:2,3:3,4:4});
+	</script>
+</body>
+</html>
