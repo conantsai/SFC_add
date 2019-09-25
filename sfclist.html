@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/static/ADD/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/ADD/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/ADD/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+<!--  -------------------------------------------------->
+<form action="/sfcaction/" method="post">
+    {% csrf_token %}
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Add Service Function Chain Rule
+				</span>
+                                <div style="padding-bottom: 20px">
+                                <input type="submit" name="Edit" class="btn btn-info btn-lg"  value="EDIT">
+		                                
+                                <input type="submit" name="AddPage" class="btn btn-warning btn-lg"  value="ADD">
+				<input type="submit" name="Delete" class="btn btn-danger btn-lg"  value="DELETE">
+                                </div>
+                                <div class="wrap-input100 bg1">
+                                    <span class="label-input100">Routing Rule:</span>
+                                    <table class="table table-hover">
+                                        <thread stytle="display:block;">
+                                            <tr bgcolor = #FFFACD>
+                                                <td width = 100>{{mess}}</td>
+                                                <td width = 150 align='center' style='font-size:24px; font-family:Montserrat-SemiBold'>private IP</td>
+                                                <td width = 150 align='center' style='font-size:24px; font-family:Montserrat-SemiBold'>Port</td>
+                                                <td width = 350 align='center' style='font-size:24px; font-family:Montserrat-SemiBold'>Order</td>
+ 
+                                            </tr>
+                                        </thread>
+                                        <tbody stytle=height:850px;overflow:auto;display:block;>
+                                            <tr>
+                                                <td width=100>
+                                                    <div class='contact100-form-checkbox'>    
+                                                        <input class='input-checkbox100' style='zoom: 1.5; vertiacl-align: middle;' id='ckb1' type="checkbox" name='ckb1'>
+                                                    </div>
+                                                </td>
+                                                <td width=150 align='center' stytle='vertical-align:middle;'>172.17.2.1</td>
+                                                <td width=150 align='center' stytle='vertical-align:middle;font-size:18px;'>80</td>
+                                                <td width=350 align='center' stytle='vertical-align:middle;font-size:18px;'>FW>IDS>DPI>WAF</td>
+                                            </tr>
+                                            <tr>
+                                                <td width=100>
+                                                    <div class='contact100-form-checkbox'>    
+                                                        <input class='input-checkbox100' style='zoom: 1.5; vertiacl-align: middle;' id='ckb1' type="checkbox" name='ckb1'>
+                                                    </div>
+                                                </td>
+                                                <td width=150 align='center' stytle='vertical-align:middle;'>172.17.2.1</td>
+                                                <td width=150 align='center' stytle='vertical-align:middle;font-size:18px;'>80</td>
+                                                <td width=350 align='center' stytle='vertical-align:middle;font-size:18px;'>FW>IDS>DPI>WAF</td>
+                                            </tr>
+
+                                         </tbody>                                           
+                                    </table>
+                                </div>
+                           {{rulelist}}
+                           {{rulecheck}}
+			</form>
+		</div>
+	</div>
+</form>
+
+
+<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/ADD/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+
+
+			$(".js-select2").each(function(){
+				$(this).on('select2:close', function (e){
+					if($(this).val() == "Please chooses") {
+						$('.js-show-service').slideUp();
+					}
+					else {
+						$('.js-show-service').slideUp();
+						$('.js-show-service').slideDown();
+					}
+				});
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/ADD/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/ADD/vendor/noui/nouislider.min.js"></script>
+	<script>
+	    var filterBar = document.getElementById('filter-bar');
+
+	    noUiSlider.create(filterBar, {
+	        start: [ 1500, 3900 ],
+	        connect: true,
+	        range: {
+	            'min': 1500,
+	            'max': 7500
+	        }
+	    });
+
+	    var skipValues = [
+	    document.getElementById('value-lower'),
+	    document.getElementById('value-upper')
+	    ];
+
+	    filterBar.noUiSlider.on('update', function( values, handle ) {
+	        skipValues[handle].innerHTML = Math.round(values[handle]);
+	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+	    });
+	</script>
+<!--===============================================================================================-->
+	<script src="/static/ADD/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+
+<!-- User scripts -->
+<script>
+const onTalbeChange = () => {
+	if ($('#table').val() === 'filter') {
+		$('#chain').val('FORWARD');
+		$('#target').append('<option value="REJECT">REJECT</option>');
+	} else {
+		$('#chain').val('PREROUTING');
+		$('#target > [value="REJECT"]').remove();
+	}
+  $('#chain').select2().trigger('change');
+}
+</script>
+
+<!-- Checkbox sigle select --> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input:checkbox').click(function(){
+            $('input:checkbox').not(this).prop('checked', false);
+        });
+    });
+</script>
+
+</body>
+</html>
