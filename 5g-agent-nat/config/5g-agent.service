@@ -1,0 +1,15 @@
+[Unit]
+Description=Secure Service Agent
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/5g-agent-nat
+EnvironmentFile=/etc/environment
+ExecStart=/opt/5g-agent-nat/server.py
+Restart=always
+RestartSec=15s
+
+[Install]
+WantedBy=multi-user.target
